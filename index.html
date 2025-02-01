@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U-Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <header>
+    <div class="navbar">
+        <div class="nav-logo">
+        </div>
+
+        <div class="nav-address">
+            <p class="add-first">Delievery all</p>
+            <div class="add-icon">
+                <i class="fa-solid fa-location-dot"></i>
+                <p class="add-second"> Over India</p>
+            </div>
+        </div>
+        <div class="nav-search">
+            <input id="search-input" placeholder="  Search U-Shop" class="search-input">
+            <div id="search-button" class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+        <div class="nav-signin" onclick="showWorkingMessage('signin')"> 
+            <i class="fa-solid fa-user"></i>
+            sign-in
+        </div>
+        
+        <div class="nav-wishlist" onclick="showWorkingMessage('wishlist')">
+            <i class="fa-solid fa-heart"></i>
+            wishlist
+        </div>
+        <div id="workingMessage" class="working-message">
+            We are working on this feature!
+        </div>
+<div class="cartTab" onclick="toggleCart()">
+    <i class="fa-solid fa-cart-shopping"></i>
+    Cart
+</div>
+<div id="sidebarCart" class="sidebar" style="background-color:dimgray;">
+    <div class="cart-header">
+        <h3>Shopping Cart</h3>
+        <button onclick="toggleCart()" style="background-color: red; width: 50px; height: 28px;">Close</button>
+    </div>
+    <div class="cart-body" id="cart-items">
+    </div>
+    <div class="cart-footer">
+        <div id="cart-total"></div>
+        <button onclick="buyCart()" style="background-color: rgb(115, 148, 115);"> buy </button>
+    </div>
+</div>
+    </div>
+</header>
+
+<div class="hero-section">
+    <div class="hero-message">
+        <p><marquee style="color:red">You are on Ushop.com.You can shop anything on U-shop we have millions of products with fast local delivery.</marquee>
+        </p>
+    </div>
+</div>
+<div class="shop-section" style="background-color: rgb(196, 177, 180);">
+    <div class="box" data-name="Jeans">
+        <div class="box-content">
+            <h2>Jeans<b> $ 1500</b></h2>
+            <div class="box-image" style="background-image: url('box1.jpg');"></div>
+            <div class="buttons">
+                <button onclick="addToCart('Jeans', 1500, 'box1.jpg')">
+                    <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="box2 box" data-name="Top"><div class="box-content">
+        <h2>Top<b> $ 700</b></h2>
+        <div class="box-image" style="background-image: url('box2.jpg');"></div>
+        <div class="buttons">
+           
+            <button onclick="addToCart('top', 700, 'box2.jpg')">
+                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+            </button>
+         </div>
+        </div></div>
+    <div class="box3 box" data-name="Kurta"><div class="box-content">
+        <h2>Kurta<b> $ 900</b></h2>
+        <div class="box-image" style="background-image: url('box3.jpg');"></div>
+        <div class="buttons">
+          
+            <button onclick="addToCart('kurta', 900, 'box3.jpg')">
+                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+            </button>
+         </div>
+        </div></div>
+    <div class="box4 box" data-name="Jeans"><div class="box-content">
+        <h2>Jeans<b> $ 1500</b></h2>
+        <div class="box-image" style="background-image: url('box4.jpg');"></div>
+        <div class="buttons">
+       
+            <button onclick="addToCart('Jeans', 1500, 'box4.jpg')">
+                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+            </button>
+         </div>
+        </div></div>
+    <div class="box4 box" data-name="trousers"><div class="box-content">
+        <h2>trousers<b> $ 1200</b></h2>
+        <div class="box-image" style="background-image: url('box5.jpg');"></div>
+        <div class="buttons">
+      
+            <button onclick="addToCart('trouser', 1200, 'box5.jpg')">
+                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+            </button>
+         </div>
+        </div></div>
+    <div class="box4 box" data-name="Shirt"><div class="box-content">
+        <h2>Shirt<b> $ 1000</b></h2>
+        <div class="box-image" style="background-image: url('box6.jpg');"></div>
+        <div class="buttons">
+    
+            <button onclick="addToCart('shirt', 1000, 'box6.jpg')">
+                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+            </button>
+         </div>
+        </div></div> 
+    <div class="box4 box" data-name="shorts"><div class="box-content">
+        <h2>shorts<b> $ 700</b></h2>
+        <div class="box-image" style="background-image: url('box7.jpg');"></div>
+        <div class="buttons">
+   
+            <button onclick="addToCart('shorts', 700, 'box7.jpg')">
+                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+            </button>
+         </div>
+        </div></div>
+    <div class="box4 box" data-name="Trousers"><div class="box-content">
+        <h2>Trousers<b> $ 800</b></h2>
+        <div class="box-image" style="background-image: url('box8.jpg');"></div>
+        <div class="buttons">
+   
+            <button onclick="addToCart('trousers', 800, 'box8.jpg')">
+                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+            </button>
+         </div>
+        </div></div>   
+</div>
+<footer>
+   <div class="foot-panel1">
+        <div class="details">
+            <button style="background-color: rgb(178, 204, 204);"><i class="fa-solid fa-comment">    </i>comment</button>
+            <button style="background-color: rgb(178, 204, 204);"><i class="fa-solid fa-star">    </i> please feel free to rate us</button>
+            <button style="background-color: rgb(178, 204, 204);"><i class="fa-solid fa-flag">    </i>Indian brand</button>
+        </div>
+    </div>
+    <div class="foot-panel2">
+        <div class="pages">
+            <a>terms and conditions</a>
+            <a>Privacy Notice</a>
+            <a>Your Ads Privacy Choices</a>
+        </div>
+        <div class="copyright"><i class="fa-solid fa-copyright"></i>1996-2023, Ushop.com , Inc. or its affiliates</div>
+    </div>
+</footer>
+</body>
+</html>
